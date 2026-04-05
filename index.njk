@@ -1,0 +1,112 @@
+---
+layout: layout.njk
+title: Home
+---
+
+<div id="overlay" class="hidden">
+  <div id="overlay-inner"></div>
+</div>
+
+<div class="grid" id="grid">
+
+  <!-- 1. ABOUT -->
+  <a href="/about/" class="card fixed">About</a>
+
+  <!-- 2. RANDOM -->
+  <a href="#" id="random-post" class="card fixed">Random</a>
+
+  <!-- 3. OUTSIDE -->
+  <a href="#" id="external-link" class="card fixed">Outside</a>
+
+  <!-- POSTS -->
+  {% for post in collections.posts %}
+    <a href="{{ post.url }}" class="card post-card">
+      {{ post.data.title }}
+    </a>
+  {% endfor %}
+
+</div>
+
+<script>
+const overlay = document.getElementById("overlay");
+const inner = document.getElementById("overlay-inner");
+const grid = document.getElementById("grid");
+
+const overlayColors = [
+  "rgb(247, 195, 211)",
+  "rgb(195, 247, 220)",
+  "rgb(210, 200, 255)",
+  "rgb(255, 240, 180)"
+];
+
+const randomPostLink = document.getElementById("random-post");
+const externalLink = document.getElementById("external-link");
+
+const postCards = Array.from(document.querySelectorAll(".post-card"));
+const cards = document.querySelectorAll(".card");
+
+// RANDOM POST
+const postUrls = postCards.map(card => card.getAttribute("href"));
+
+if (postUrls.length > 0) {
+  const random = postUrls[Math.floor(Math.random() * postUrls.length)];
+  randomPostLink.href = random;
+}
+
+// EXTERNAL LINK
+externalLink.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const sites = [
+    "https://emojiisland.com/pages/download-new-emoji-icons-in-png-ios-10",
+    "https://www.coyleandsharpe.com/",
+    "https://www.craignutt.com/projects#/corncorde/"
+  ];
+
+  const random = sites[Math.floor(Math.random() * sites.length)];
+  window.open(random, "_blank");
+});
+
+// SHUFFLE POSTS
+postCards.sort(() => Math.random() - 0.5);
+postCards.forEach(card => grid.appendChild(card));
+
+// OVERLAY CLICK
+cards.forEach(card => {
+  card.addEventListener("click", async (e) => {
+    const url = card.getAttribute("href");
+
+    if (!url || url === "#" || url.startsWith("http")) return;
+
+    e.preventDefault();
+
+    try {
+      const res = await fetch(url);
+      const text = await res.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(text, "text/html");
+
+      const content = doc.querySelector(".post") || doc.body;
+
+      inner.innerHTML = content.innerHTML;
+
+// 🎲 pick random color
+const randomColor =
+  overlayColors[Math.floor(Math.random() * overlayColors.length)];
+
+inner.style.background = randomColor;
+
+overlay.classList.remove("hidden");
+    } catch (err) {
+      console.error(err);
+    }
+  });
+});
+
+// CLOSE
+overlay.addEventListener("click", () => {
+  overlay.classList.add("hidden");
+  inner.innerHTML = "";
+});
+</script>

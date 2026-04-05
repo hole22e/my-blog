@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+
+
+
+<body>
+
+
+  <div class="post">
+
+    <h1 class="post-title"></h1>
+
+    
+
+    <div class="post-content">
+      
+
+
+<div class="about-container">
+  
+  <img src="/images/katieswap.jpg" class="about-image">
+
+  <div class="about-text">
+    <h1>About</h1>
+    <p>
+      This is where your text goes. You can write about your work, ideas,
+      weird experiments, whatever.
+    </p>
+  </div>
+
+</div>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
+
+<script>
+  const images = [
+    "/images/DVNP.jpg",
+    "/images/Cooperation.jpg",
+    "/images/meemaw.jpg",
+    "/images/theheart.gif"
+  ];
+
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  document.body.style.backgroundImage = `url(${randomImage})`;
+</script>

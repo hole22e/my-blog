@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+
+
+
+<body>
+
+{% if title == "Home" %}
+  {{ content | safe }}
+
+{% else %}
+  <div class="post">
+
+    <h1 class="post-title">{{ title }}</h1>
+
+    {% if date %}
+      <div class="post-date">
+        {{ date }}
+      </div>
+    {% endif %}
+
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
+
+  </div>
+{% endif %}
+
+</body>
+</html>
+
+<script>
+  const images = [
+    "/images/DVNP.jpg",
+    "/images/Cooperation.jpg",
+    "/images/meemaw.jpg",
+    "/images/theheart.gif"
+  ];
+
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  document.body.style.backgroundImage = `url(${randomImage})`;
+</script>
