@@ -1,5 +1,5 @@
 ---
-title: What I Like
+title: Things I Like
 layout: layout.njk
 date: 2026-04-05
 ---

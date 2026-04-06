@@ -5,7 +5,8 @@ date: 2026-03-18
 ---
 Homework: 
 8 sets u laugh u lose, 
-10 sets feather tickling armpit (no smiling) (each pit), 
+10 sets feather tickling armpit (each pit), 
 16 sets fake laughing,
-10 mins no smiling
+30 mins no smiling
+
 

@@ -43,9 +43,10 @@ const randomPostLink = document.getElementById("random-post");
 const externalLink = document.getElementById("external-link");
 
 const postCards = Array.from(document.querySelectorAll(".post-card"));
-const cards = document.querySelectorAll(".card");
 
+// ------------------------
 // RANDOM POST
+// ------------------------
 const postUrls = postCards.map(card => card.getAttribute("href"));
 
 if (postUrls.length > 0) {
@@ -53,7 +54,9 @@ if (postUrls.length > 0) {
   randomPostLink.href = random;
 }
 
+// ------------------------
 // EXTERNAL LINK
+// ------------------------
 externalLink.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -67,46 +70,57 @@ externalLink.addEventListener("click", (e) => {
   window.open(random, "_blank");
 });
 
+// ------------------------
 // SHUFFLE POSTS
+// ------------------------
 postCards.sort(() => Math.random() - 0.5);
 postCards.forEach(card => grid.appendChild(card));
 
-// OVERLAY CLICK
-cards.forEach(card => {
-  card.addEventListener("click", async (e) => {
-    const url = card.getAttribute("href");
+// ------------------------
+// GLOBAL CLICK HANDLER
+// ------------------------
+document.addEventListener("click", async (e) => {
+  const link = e.target.closest("a");
+  if (!link) return;
 
-    if (!url || url === "#" || url.startsWith("http")) return;
+  const url = link.getAttribute("href");
 
-    e.preventDefault();
+  if (!url || url === "#" || url.startsWith("#")) return;
+  if (url.startsWith("http")) return;
 
-    try {
-      const res = await fetch(url);
-      const text = await res.text();
+  e.preventDefault();
 
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, "text/html");
+  try {
+    const res = await fetch(url);
+    const text = await res.text();
 
-      const content = doc.querySelector(".post") || doc.body;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
 
-      inner.innerHTML = content.innerHTML;
+    const content = doc.querySelector(".post") || doc.body;
 
-// 🎲 pick random color
-const randomColor =
-  overlayColors[Math.floor(Math.random() * overlayColors.length)];
+    inner.innerHTML = content.innerHTML;
 
-inner.style.background = randomColor;
+    // 🎲 RANDOM COLOR ON OPEN
+    const randomColor =
+      overlayColors[Math.floor(Math.random() * overlayColors.length)];
 
-overlay.classList.remove("hidden");
-    } catch (err) {
-      console.error(err);
-    }
-  });
+    inner.style.background = randomColor;
+
+    overlay.classList.remove("hidden");
+
+  } catch (err) {
+    console.error("Failed to load:", err);
+  }
 });
 
-// CLOSE
+// ------------------------
+// CLOSE OVERLAY
+// ------------------------
 overlay.addEventListener("click", () => {
   overlay.classList.add("hidden");
   inner.innerHTML = "";
 });
 </script>
+
+
