@@ -28,10 +28,13 @@ body {
     opacity: 1;
 }
 
-
 .fixed:nth-child(1) { background: rgb(255, 16, 55); }
 .fixed:nth-child(2) { background: rgb(134, 191, 0); }
 .fixed:nth-child(3) { background: rgb(179, 236, 255); }
+
+.card.fixed {
+  font-weight: bold;
+}
 
 
 #overlay {

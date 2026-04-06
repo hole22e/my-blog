@@ -13,10 +13,10 @@ title: Home
   <a href="/about/" class="card fixed">Welcome To My Bloggy</a>
 
   <!-- 2. RANDOM -->
-  <a href="#" id="random-post" class="card fixed">Random</a>
+  <a href="#" id="random-post" class="card fixed">Randomination</a>
 
   <!-- 3. OUTSIDE -->
-  <a href="#" id="external-link" class="card fixed">Outside</a>
+  <a href="#" id="external-link" class="card fixed">GoodBye</a>
 
   <!-- POSTS -->
   {% for post in collections.posts %}
@@ -45,14 +45,32 @@ const externalLink = document.getElementById("external-link");
 const postCards = Array.from(document.querySelectorAll(".post-card"));
 
 // ------------------------
-// RANDOM POST
+// RANDOM POST (fix)
 // ------------------------
 const postUrls = postCards.map(card => card.getAttribute("href"));
 
-if (postUrls.length > 0) {
+randomPostLink.addEventListener("click", () => {
+  if (postUrls.length === 0) return;
+
   const random = postUrls[Math.floor(Math.random() * postUrls.length)];
-  randomPostLink.href = random;
-}
+
+  // 👇 THIS is the key
+  randomPostLink.setAttribute("href", random);
+});
+
+let last = -1;
+
+randomPostLink.addEventListener("click", () => {
+  if (postUrls.length === 0) return;
+
+  let i;
+  do {
+    i = Math.floor(Math.random() * postUrls.length);
+  } while (i === last);
+
+  last = i;
+  randomPostLink.setAttribute("href", postUrls[i]);
+});
 
 // ------------------------
 // EXTERNAL LINK
