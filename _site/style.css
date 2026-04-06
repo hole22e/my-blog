@@ -19,11 +19,13 @@ body {
     color: black;
     border: 1px solid rgb(186, 147, 209);
     transition: transform 0.2s;
+    opacity: 0.7;
 }
 
 .card:hover {
     transform: scale(1.05);
-    background: rgb(182, 192, 45);
+    background: yellow;
+    opacity: 1;
 }
 
 
@@ -85,7 +87,7 @@ body {
 
 .about-container {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   align-items: flex-start;
   padding: 2px;
 }
@@ -106,8 +108,8 @@ body {
 }
 
 .about-text h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1.2px;
+  font-size: 1rem;
+  margin-bottom: 1px;
 }
 
 .about-text p {

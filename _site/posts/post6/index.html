@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ title }}</title>
+    <title>What I Like</title>
     <link rel="stylesheet" href="/style.css"> 
 </head>
 
@@ -9,26 +9,40 @@
 
 <body>
 
-{% if title == "Home" %}
-  {{ content | safe }}
 
-{% else %}
   <div class="post">
 
-    <h1 class="post-title">{{ title }}</h1>
+    <h1 class="post-title">What I Like</h1>
 
-    {% if date %}
+    
       <div class="post-date">
-        {{ date }}
+        Sat Apr 04 2026 20:00:00 GMT-0400 (Eastern Daylight Time)
       </div>
-    {% endif %}
+    
 
     <div class="post-content">
-      {{ content | safe }}
+      <p>Suburbs suburbia urbia
+Burgers
+Suburburgeria
+Suburbgeria
+Genetic engineering
+Geneticles
+Genome
+Gene pool
+Gnomes pool
+Gene of gnomes
+Gnomicon
+Ticklical
+Typical ticklical</p>
+<p>Delish
+Mister wish</p>
+<p>Squinkies
+Sticky mickey</p>
+
     </div>
 
   </div>
-{% endif %}
+
 
 </body>
 </html>

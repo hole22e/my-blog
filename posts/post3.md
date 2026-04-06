@@ -1,5 +1,5 @@
 ---
-title: Spring break books
+title: Spring Break Reading List
 layout: layout.njk
 date: 2026-03-23
 ---

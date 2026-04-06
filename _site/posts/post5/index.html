@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ title }}</title>
+    <title>Reflection On Emoji Midterm</title>
     <link rel="stylesheet" href="/style.css"> 
 </head>
 
@@ -9,26 +9,28 @@
 
 <body>
 
-{% if title == "Home" %}
-  {{ content | safe }}
 
-{% else %}
   <div class="post">
 
-    <h1 class="post-title">{{ title }}</h1>
+    <h1 class="post-title">Reflection On Emoji Midterm</h1>
 
-    {% if date %}
+    
       <div class="post-date">
-        {{ date }}
+        Tue Mar 17 2026 20:00:00 GMT-0400 (Eastern Daylight Time)
       </div>
-    {% endif %}
+    
 
     <div class="post-content">
-      {{ content | safe }}
+      <p>Homework:
+8 sets u laugh u lose,
+10 sets feather tickling armpit (no smiling) (each pit),
+16 sets fake laughing,
+10 mins no smiling</p>
+
     </div>
 
   </div>
-{% endif %}
+
 
 </body>
 </html>
