@@ -1,5 +1,5 @@
 ---
-title: Things I Like
+title: My Favorite Things
 layout: layout.njk
 date: 2026-04-05
 ---
@@ -21,5 +21,5 @@ Delish
 Mister wish
 
 Squinkies
-Sticky mickey
+Sticky mickeys
 

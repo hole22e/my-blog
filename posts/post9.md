@@ -18,3 +18,5 @@ Some important emojis I picked up over spring, in addition to some other importa
 🪤--trap is set
 📯--(the reason this bugle is next to the mail is because it's a postal horn)
 🪖🧥 -- 3 kids ina trenchcoat on the front lines
+
+*Allisons amendment: 🏤 -- bugle building/horn haus
