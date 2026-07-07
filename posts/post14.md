@@ -1,0 +1,6 @@
+---
+title: Reflection On Trough Final
+layout: layout.njk
+date: 2026-05-14
+---
+Crit was a humiliation ritual. Good thing I get off on it. Got so tipsy at lunch at Harry’s I went upstairs to take a nap in the break room and missed the end of crit completely, when I came back downstairs everyone had packed up and left. Weird and fucked day but fresh insight that my work lies between labubus (thanks Rachel) and the Yosemite Half Dome (thanks James) and that was the end of that. That night we reconvened at provwash surrounded by junkfuck finals watching korean possession gore with amy and madelyn izzie sleeping on the turf han tending the bar with wood-themed menu and engine oil gin and fresh mint leaves eating gloria’s gummy multivitamins feeling molecularly and spiritually realigned cooper sticking out of the shelf like a dog stuck in the doggy door running into seniors haunting provwash like specters and Im deadbeat luigi. Felt tender and taken care of. Blessed and grateful for this department, blessed to feel degraded, bless risd, bless design bless germans and america and lothar   
